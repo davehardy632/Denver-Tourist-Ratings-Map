@@ -8,9 +8,9 @@ namespace :import do
 
     geojson_data["features"].each do |data|
       coordinate_string = ""
-      data["geometry"]["coordinates"][0][0].each do |coord|
-        coordinate_string += "--" + coord.to_s
-      end
+        data["geometry"]["coordinates"][0][0].each do |coord|
+          coordinate_string += "--" + coord.to_s
+        end
       NeighborhoodCoordinate.create(neighborhood: data["properties"]["neighbourhood"],
                                     coordinates: coordinate_string)
     end
