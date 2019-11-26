@@ -8,7 +8,7 @@ namespace :import do
       row_data = row.to_h
 
       Listing.create(listing_id: row_data["id"],
-                     neighborhood: row_data["neighbourhood"],
+                     neighborhood_name: row_data["neighbourhood"],
                      review_scores_rating: row_data["review_scores_rating"].to_i,
                      latitude: row_data["latitude"].to_f,
                      longitude: row_data["longitude"].to_f)
