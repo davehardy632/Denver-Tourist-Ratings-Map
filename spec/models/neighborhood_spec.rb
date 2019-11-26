@@ -6,7 +6,7 @@ describe Neighborhood, type: :model do
     it {should validate_presence_of :coordinates}
   end
 
-  # describe "Relationships" do
-  #   it {should have_many :listings}
-  # end
+  describe "Relationships" do
+    it {should have_many :listings}
+  end
 end

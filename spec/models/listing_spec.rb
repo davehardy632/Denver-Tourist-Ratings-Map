@@ -9,7 +9,7 @@ describe Listing, type: :model do
     it {should validate_presence_of :longitude}
   end
 
-  # describe "Relationships" do
-  #   it {should belong_to :neighborhood}
-  # end
+  describe "Relationships" do
+    it {should belong_to(:neighborhood).optional}
+  end
 end
