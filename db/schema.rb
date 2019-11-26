@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_045559) do
+ActiveRecord::Schema.define(version: 2019_11_26_054945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,9 +24,8 @@ ActiveRecord::Schema.define(version: 2019_11_26_045559) do
   end
 
   create_table "neighborhood_coordinates", force: :cascade do |t|
-    t.string "geometry_type"
-    t.text "coordinates"
     t.string "neighborhood"
+    t.text "coordinates"
   end
 
 end
