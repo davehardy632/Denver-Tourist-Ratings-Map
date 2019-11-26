@@ -10,26 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_062550) do
+ActiveRecord::Schema.define(version: 2019_11_26_211524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "listings", force: :cascade do |t|
     t.integer "listing_id"
-    t.string "neighborhood"
+    t.string "neighborhood_name"
     t.integer "review_scores_rating"
     t.float "latitude"
     t.float "longitude"
-  end
-
-  create_table "neighborhood_coordinates", force: :cascade do |t|
-    t.string "neighborhood"
-    t.text "coordinates"
+    t.bigint "neighborhood_id"
+    t.index ["neighborhood_id"], name: "index_listings_on_neighborhood_id"
   end
 
   create_table "neighborhoods", force: :cascade do |t|
     t.string "name"
+    t.text "coordinates"
   end
 
+  add_foreign_key "listings", "neighborhoods"
 end
