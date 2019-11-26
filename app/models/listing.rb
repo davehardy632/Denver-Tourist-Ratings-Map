@@ -5,4 +5,6 @@ class Listing < ApplicationRecord
                         :latitude,
                         :longitude
 
+  # sql query for average ratings per neighborhood
+  # select listings.neighborhood as neighborhood, avg(listings.review_scores_rating) as average_rating from listings group by neighborhood order by average_rating desc;
 end
