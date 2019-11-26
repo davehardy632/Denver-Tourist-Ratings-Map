@@ -4,7 +4,7 @@ require 'csv'
 namespace :import do
   desc "Import data from csv file"
   task listing_data: :environment do
-    CSV.foreach('./listings.csv', headers: true) do |row|
+    CSV.foreach('./data/listings.csv', headers: true) do |row|
       row_data = row.to_h
 
       Listing.create(listing_id: row_data["id"],
