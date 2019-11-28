@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_211524) do
 
   create_table "neighborhoods", force: :cascade do |t|
     t.string "name"
-    t.text "coordinates"
+    t.json "coordinates"
   end
 
   add_foreign_key "listings", "neighborhoods"
